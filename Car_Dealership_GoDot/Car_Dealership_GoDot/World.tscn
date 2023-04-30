@@ -1,0 +1,52 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://3PPlayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Dealership.tscn" type="PackedScene" id=2]
+[ext_resource path="res://VRHUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://VRHUD.gd" type="Script" id=4]
+[ext_resource path="res://Chair.glb" type="PackedScene" id=5]
+[ext_resource path="res://Front_Desk.glb" type="PackedScene" id=6]
+[ext_resource path="res://ford_angila.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Office_Chair.glb" type="PackedScene" id=8]
+[ext_resource path="res://Buy_Stand.tscn" type="PackedScene" id=9]
+[ext_resource path="res://low_poly_car.tscn" type="PackedScene" id=10]
+[ext_resource path="res://suzuki_maruti.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SimpleComputer.glb" type="PackedScene" id=12]
+
+[node name="World" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.58477, 0, 0.354744, 0, 1.23464, 0, -0.434524, 0, 1.2938, 13.9917, 1.54402, -4.80048 )
+
+[node name="VRDebugHUD" parent="Player" instance=ExtResource( 3 )]
+script = ExtResource( 4 )
+
+[node name="Dealership" parent="." instance=ExtResource( 2 )]
+transform = Transform( 13.6005, 0, 0, 0, 10.2027, 0, 0, 0, 14.8732, 65.9803, 1.73771, -29.5154 )
+
+[node name="ford_angila" parent="." instance=ExtResource( 7 )]
+transform = Transform( -10.9634, 0, 0.201656, 0, 11.805, 0, -0.191368, 0, -11.5528, 154.232, 2.11345, 111.043 )
+
+[node name="sports_car" parent="." instance=ExtResource( 10 )]
+transform = Transform( -10.1596, 0, 0.259961, 0, 8.46537, 0, -0.264721, 0, -10.2569, 155.176, 2.57605, -75.4002 )
+
+[node name="suzuki_maruti2" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.151677, 0, -15.2176, 0, 11.5537, 0, 14.0243, 0, -0.122141, -13.0843, 1.8142, -189.823 )
+
+[node name="Chair" parent="." instance=ExtResource( 5 )]
+transform = Transform( 12.6824, 0, -18.1489, 0, 14.1855, 0, 16.0552, 0, 14.3362, -51.2738, 1.80214, 8.01539 )
+
+[node name="Chair2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 14.7405, 0, -16.0394, 0, 14.1855, 0, 14.1891, 0, 16.6627, -71.4083, 1.8991, -11.1847 )
+
+[node name="Front_Desk" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.0295231, 0, -24.7478, 0, 16.0881, 0, 23.7625, 0, 0.0492148, -61.3855, 1.91029, 47.3881 )
+
+[node name="Office_Chair" parent="." instance=ExtResource( 8 )]
+transform = Transform( 11.9413, 0, 18.7803, 0, 14.1855, 0, -16.6138, 0, 13.4985, -81.5219, 1.59393, 50.3528 )
+
+[node name="Buy_Stand" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.0574254, 0, -12.6277, 0, 10.3173, 0, 13.267, 0, -0.0546583, -52.4217, 1.8576, 91.0633 )
+
+[node name="SimpleComputer" parent="." instance=ExtResource( 12 )]
+transform = Transform( 3.15981, 0, 0, 0, 4.02199, 0, 0, 0, 4.70675, -59.7536, 13.5419, 46.6887 )

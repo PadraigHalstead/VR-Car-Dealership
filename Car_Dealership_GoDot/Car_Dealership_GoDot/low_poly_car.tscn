@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://low_poly_car_Car.tscn" type="PackedScene" id=1]
+[ext_resource path="res://carPlatform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Change Colour Stand.tscn" type="PackedScene" id=3]
+[ext_resource path="res://low_poly_car.gd" type="Script" id=10]
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="CubeMesh" id=7]
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0, 0.180392, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 1, 0.164706, 0.164706, 1 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[node name="low_poly_car" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.381507, 0 )
+script = ExtResource( 10 )
+
+[node name="Change_Colour_Stand_Buttons" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.00101232, 0, -0.999999, 0, 1, 0, 0.999999, 0, -0.00101232, 0.58568, -0.092582, -3.37753 )
+
+[node name="car" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.0522, 0, 0, 0, 1.05395, 0, 0, 0, 0.914158, -1.86592, 0.788285, 0.00283435 )
+
+[node name="Default-Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, 0 )
+
+[node name="Default-Collision" type="CollisionShape" parent="Default-Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 6 )
+
+[node name="Default-Mesh" type="MeshInstance" parent="Default-Area"]
+mesh = SubResource( 7 )
+material/0 = SubResource( 12 )
+
+[node name="Red-Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, 2.1 )
+
+[node name="Red-Collision" type="CollisionShape" parent="Red-Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 6 )
+
+[node name="Red-Mesh" type="MeshInstance" parent="Red-Area"]
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
+
+[node name="Black-Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, -2.1 )
+
+[node name="Black-Collision" type="CollisionShape" parent="Black-Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 6 )
+
+[node name="Black-Mesh" type="MeshInstance" parent="Black-Area"]
+mesh = SubResource( 7 )
+material/0 = SubResource( 9 )
+
+[node name="carPlatform" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.23138, 0, 0, 0, 1, 0, 0, 0, 1.34519, -1.90201, -0.106223, -0.118301 )
+
+[connection signal="body_entered" from="Default-Area" to="." method="_on_DefaultArea_body_entered"]
+[connection signal="body_entered" from="Red-Area" to="." method="_on_RedArea_body_entered"]
+[connection signal="body_entered" from="Black-Area" to="." method="_on_BlackArea_body_entered"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Buy_Stand_Buttons.glb" type="PackedScene" id=1]
+[ext_resource path="res://Material_002.material" type="Material" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[node name="Buy_Stand_Buttons" instance=ExtResource( 1 )]
+transform = Transform( 7.55997, 0, 0, 0, 5.20518, 0, 0, 0, 6.20138, 0, 0, 0 )
+
+[node name="Select Text001" parent="." index="4"]
+visible = false
+
+[node name="Right Button" parent="." index="7"]
+visible = false
+
+[node name="Middle Button" parent="." index="8"]
+visible = false
+
+[node name="Left Button" parent="." index="9"]
+visible = false
+
+[node name="Extended Stand" parent="." index="10"]
+visible = false
+
+[node name="Select Text002" parent="." index="11"]
+visible = false
+
+[node name="Green-Area" type="Area" parent="." index="12"]
+transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 1, -0.019238, -0.967028, -2.1 )
+
+[node name="Green-Collision" type="CollisionShape" parent="Green-Area" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 1 )
+
+[node name="Green-Mesh" type="MeshInstance" parent="Green-Area" index="1"]
+mesh = SubResource( 2 )
+material/0 = ExtResource( 2 )
