@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://models/change_color_stand/Change_Colour_Stand_Buttons.glb" type="PackedScene" id=1]
+
+[node name="Change_Colour_Stand_Buttons" instance=ExtResource( 1 )]
+
+[node name="Button Base001" parent="." index="3"]
+visible = false
+
+[node name="Select Text001" parent="." index="4"]
+visible = false
+
+[node name="Button Base" parent="." index="5"]
+visible = false
+
+[node name="Select Text" parent="." index="6"]
+visible = false
