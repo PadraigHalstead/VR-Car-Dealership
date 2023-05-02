@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://models/low_poly_car/Material_616.material" type="Material" id=1]
 [ext_resource path="res://models/low_poly_car/Material_001.material" type="Material" id=2]
@@ -210,19 +210,6 @@ surfaces/1 = {
 [sub_resource type="ConvexPolygonShape" id=13]
 points = PoolVector3Array( 1.02658, -0.0294646, 1.82038, 1.02658, -0.262787, 1.8009, 1.02658, 0.127261, 1.78921, 0.979145, 0.727565, 2.36278, 1.02658, 0.26114, 1.69962, 0.974523, -0.0619135, 2.23083, 0.945782, -0.140718, 2.17046, 0.895536, -0.191047, 2.11446, 0.974523, -0.262787, 1.84667, 1.02638, -0.262787, -1.84794, 0.861168, 0.864755, 2.33844, 0.840466, 0.833851, 2.34574, 0.932316, 0.728117, 2.36327, 0.895536, -0.090389, 2.22694, 0.992812, 0.742575, 1.96547, 1.02638, 0.381996, 1.40797, 1.02638, 0.35054, 1.56573, 1.02638, -0.0305683, -1.84794, 1.02638, 0.127261, -1.81678, 1.02638, 0.26114, -1.72719, 1.02638, 0.35054, -1.59329, 1.02638, 0.381996, -1.43553, 0.348257, -0.240934, 2.08087, -0.974821, -0.262787, 1.84667, 0.822177, -0.262787, -2.38986, 0.857349, -0.186742, -2.32364, -0.861466, 0.864755, 2.33844, 0.917242, 0.83032, 1.94454, 0.650134, 0.861113, -0.457836, -0.932614, 0.728117, 2.36376, -0.840765, 0.833851, 2.34574, -0.895834, -0.090389, 2.22694, 0.974523, 0.52647, -0.808892, 0.781176, 0.80052, -0.346335, 0.739773, 0.0767116, -2.51646, 0.974322, 0.427799, -1.81483, -0.348555, -0.240934, 2.08087, -1.02667, -0.262787, 1.8009, -0.895834, -0.191047, 2.11446, -0.822475, -0.262787, -2.38986, 0.369762, 0.0767116, -2.61043, -0.979443, 0.727565, 2.36278, -0.650433, 0.861113, -0.457836, -0.91754, 0.83032, 1.94454, -0.99311, 0.742575, 1.96547, -0.974821, -0.0619135, 2.23083, -0.945879, -0.140718, 2.17046, 0.496583, 0.111368, -2.56222, 0.656566, 0.111368, -2.51646, 0.864986, 0.375263, -1.97843, 0.897546, 0.375263, -1.95603, -0.97462, 0.427799, -1.81483, -1.02667, -0.0294646, 1.82038, -1.02667, -0.262787, -1.84794, -0.857647, -0.186742, -2.32364, -0.739871, 0.0767116, -2.51646, -0.369859, 0.0767116, -2.61043, -1.02667, 0.26114, 1.69962, -1.02667, 0.127261, 1.78921, -0.781474, 0.80052, -0.346335, -1.02667, 0.381996, 1.40797, -1.02667, 0.35054, 1.56573, -0.974821, 0.52647, -0.808892, -1.02667, 0.381996, -1.43553, -0.49668, 0.111368, -2.56222, -0.865285, 0.375263, -1.97843, -0.897844, 0.375263, -1.95603, -1.02667, 0.127261, -1.81678, -1.02667, 0.26114, -1.72719, -1.02667, 0.35054, -1.59329, -1.02667, -0.0305683, -1.84794, -0.656663, 0.111368, -2.51646 )
 
-[sub_resource type="BoxShape" id=6]
-
-[sub_resource type="CubeMesh" id=7]
-
-[sub_resource type="SpatialMaterial" id=12]
-albedo_color = Color( 0, 0.180392, 1, 1 )
-
-[sub_resource type="SpatialMaterial" id=8]
-albedo_color = Color( 1, 0.164706, 0.164706, 1 )
-
-[sub_resource type="SpatialMaterial" id=9]
-albedo_color = Color( 0, 0, 0, 1 )
-
 [sub_resource type="CylinderMesh" id=10]
 
 [sub_resource type="SpatialMaterial" id=11]
@@ -261,39 +248,6 @@ skeleton = NodePath("../..")
 [node name="car_CollisionShape" type="CollisionShape" parent="car/car_StaticBody"]
 shape = SubResource( 13 )
 
-[node name="Default-Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, 0 )
-
-[node name="Default-Collision" type="CollisionShape" parent="Default-Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
-shape = SubResource( 6 )
-
-[node name="Default-Mesh" type="MeshInstance" parent="Default-Area"]
-mesh = SubResource( 7 )
-material/0 = SubResource( 12 )
-
-[node name="Red-Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, 2.1 )
-
-[node name="Red-Collision" type="CollisionShape" parent="Red-Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
-shape = SubResource( 6 )
-
-[node name="Red-Mesh" type="MeshInstance" parent="Red-Area"]
-mesh = SubResource( 7 )
-material/0 = SubResource( 8 )
-
-[node name="Black-Area" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, -2.1 )
-
-[node name="Black-Collision" type="CollisionShape" parent="Black-Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
-shape = SubResource( 6 )
-
-[node name="Black-Mesh" type="MeshInstance" parent="Black-Area"]
-mesh = SubResource( 7 )
-material/0 = SubResource( 9 )
-
 [node name="Podium" type="MeshInstance" parent="."]
 transform = Transform( 1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -0.765286, -1.49396, 0 )
 mesh = SubResource( 10 )
@@ -301,7 +255,3 @@ material/0 = SubResource( 11 )
 
 [node name="Change_Colour_Stand_Buttons" parent="." instance=ExtResource( 11 )]
 transform = Transform( -3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, 0.6, 0, -3 )
-
-[connection signal="body_entered" from="Default-Area" to="." method="_on_DefaultArea_body_entered"]
-[connection signal="body_entered" from="Red-Area" to="." method="_on_RedArea_body_entered"]
-[connection signal="body_entered" from="Black-Area" to="." method="_on_BlackArea_body_entered"]

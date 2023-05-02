@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://models/room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/office_chair/Office_Chair.tscn" type="PackedScene" id=2]
@@ -7,10 +7,71 @@
 [ext_resource path="res://models/low_poly_car/low_poly_car.tscn" type="PackedScene" id=5]
 [ext_resource path="res://models/ford/ford_angila.tscn" type="PackedScene" id=6]
 [ext_resource path="res://models/desk/Front_Desk.tscn" type="PackedScene" id=7]
-[ext_resource path="res://models/player/VRPlayer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://models/player/TestingPlayer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://models/buy_stand/Buy_Stand.tscn" type="PackedScene" id=9]
 [ext_resource path="res://models/computer/SimpleComputer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://models/tireStack/tireStack.tscn" type="PackedScene" id=11]
+[ext_resource path="res://models/VRHUD/VRHUD.tscn" type="PackedScene" id=12]
+
+[sub_resource type="BoxShape" id=10]
+
+[sub_resource type="CubeMesh" id=11]
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0, 0.180392, 1, 1 )
+
+[sub_resource type="BoxShape" id=13]
+
+[sub_resource type="CubeMesh" id=14]
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_color = Color( 1, 0.164706, 0.164706, 1 )
+
+[sub_resource type="BoxShape" id=16]
+
+[sub_resource type="CubeMesh" id=17]
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=19]
+
+[sub_resource type="CubeMesh" id=20]
+
+[sub_resource type="BoxShape" id=21]
+
+[sub_resource type="CubeMesh" id=22]
+
+[sub_resource type="SpatialMaterial" id=23]
+albedo_color = Color( 1, 0.164706, 0.164706, 1 )
+
+[sub_resource type="BoxShape" id=24]
+
+[sub_resource type="CubeMesh" id=25]
+
+[sub_resource type="SpatialMaterial" id=26]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.168627, 0.552941, 1, 1 )
+
+[sub_resource type="BoxShape" id=4]
+
+[sub_resource type="CubeMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 1, 0.164706, 0.164706, 1 )
+
+[sub_resource type="BoxShape" id=7]
+
+[sub_resource type="CubeMesh" id=8]
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0, 0, 0, 1 )
 
 [node name="world" type="Spatial"]
 
@@ -20,13 +81,112 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0420953, 0, -0.0306683 )
 [node name="low_poly_car" parent="room" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.1329, 0, 0.175674 )
 
+[node name="Default-Area1" type="Area" parent="room/low_poly_car"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, 0 )
+
+[node name="Default-Collision" type="CollisionShape" parent="room/low_poly_car/Default-Area1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 10 )
+
+[node name="Default-Mesh" type="MeshInstance" parent="room/low_poly_car/Default-Area1"]
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="Red-Area1" type="Area" parent="room/low_poly_car"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, 2.1 )
+
+[node name="Red-Collision" type="CollisionShape" parent="room/low_poly_car/Red-Area1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 13 )
+
+[node name="Red-Mesh" type="MeshInstance" parent="room/low_poly_car/Red-Area1"]
+mesh = SubResource( 14 )
+material/0 = SubResource( 15 )
+
+[node name="Black-Area1" type="Area" parent="room/low_poly_car"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, -2.1 )
+
+[node name="Black-Collision" type="CollisionShape" parent="room/low_poly_car/Black-Area1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 16 )
+
+[node name="Black-Mesh" type="MeshInstance" parent="room/low_poly_car/Black-Area1"]
+mesh = SubResource( 17 )
+material/0 = SubResource( 18 )
+
 [node name="suzuki_maruti" parent="room" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.64824, 0, -10.5933 )
 skeleton = NodePath("../..")
 
+[node name="Default-Area2" type="Area" parent="room/suzuki_maruti"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, 0 )
+
+[node name="Default-Collision" type="CollisionShape" parent="room/suzuki_maruti/Default-Area2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 19 )
+
+[node name="Default-Mesh" type="MeshInstance" parent="room/suzuki_maruti/Default-Area2"]
+mesh = SubResource( 20 )
+
+[node name="Red-Area2" type="Area" parent="room/suzuki_maruti"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, 2.1 )
+
+[node name="Red-Collision" type="CollisionShape" parent="room/suzuki_maruti/Red-Area2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 21 )
+
+[node name="Red-Mesh" type="MeshInstance" parent="room/suzuki_maruti/Red-Area2"]
+mesh = SubResource( 22 )
+material/0 = SubResource( 23 )
+
+[node name="Black-Area2" type="Area" parent="room/suzuki_maruti"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, -2.1 )
+
+[node name="Black-Collision" type="CollisionShape" parent="room/suzuki_maruti/Black-Area2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 24 )
+
+[node name="Black-Mesh" type="MeshInstance" parent="room/suzuki_maruti/Black-Area2"]
+mesh = SubResource( 25 )
+material/0 = SubResource( 26 )
+
 [node name="ford_angila" parent="room" instance=ExtResource( 6 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.98543, 0, 8.88736 )
 skeleton = NodePath("../suzuki_maruti")
+
+[node name="Default-Area" type="Area" parent="room/ford_angila"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.98035, -0.940969, 0.112228 )
+
+[node name="Default-Collision" type="CollisionShape" parent="room/ford_angila/Default-Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 1 )
+
+[node name="Default-Mesh" type="MeshInstance" parent="room/ford_angila/Default-Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.118803 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Red-Area" type="Area" parent="room/ford_angila"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, 2.1 )
+
+[node name="Red-Collision" type="CollisionShape" parent="room/ford_angila/Red-Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 4 )
+
+[node name="Red-Mesh" type="MeshInstance" parent="room/ford_angila/Red-Area"]
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Black-Area" type="Area" parent="room/ford_angila"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95673, -0.940969, -2.1 )
+
+[node name="Black-Collision" type="CollisionShape" parent="room/ford_angila/Black-Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
+shape = SubResource( 7 )
+
+[node name="Black-Mesh" type="MeshInstance" parent="room/ford_angila/Black-Area"]
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
 
 [node name="Front_Desk" parent="room" instance=ExtResource( 7 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -9.08942, -2.38419e-07, 7.24798 )
@@ -46,8 +206,29 @@ transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -
 [node name="SimpleComputer" parent="." instance=ExtResource( 10 )]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -8.91529, 0.719816, 7.25097 )
 
-[node name="VRPlayer" parent="." instance=ExtResource( 8 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.478657, -0.553767, 3.38638 )
-
 [node name="tireStack" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -12.8479, 0, 2.30914 )
+
+[node name="FPPlayer" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.21832, 4.76837e-07, 7.85706 )
+
+[node name="VRDebugHUD" parent="FPPlayer" instance=ExtResource( 12 )]
+
+[connection signal="body_entered" from="room/low_poly_car/Default-Area1" to="room/low_poly_car" method="_on_DefaultArea1_body_entered"]
+[connection signal="body_entered" from="room/low_poly_car/Default-Area1" to="FPPlayer/VRDebugHUD" method="_on_DefaultArea1_body_entered"]
+[connection signal="body_entered" from="room/low_poly_car/Red-Area1" to="room/low_poly_car" method="_on_RedArea1_body_entered"]
+[connection signal="body_entered" from="room/low_poly_car/Red-Area1" to="FPPlayer/VRDebugHUD" method="_on_RedArea1_body_entered"]
+[connection signal="body_entered" from="room/low_poly_car/Black-Area1" to="room/low_poly_car" method="_on_BlackArea1_body_entered"]
+[connection signal="body_entered" from="room/low_poly_car/Black-Area1" to="FPPlayer/VRDebugHUD" method="_on_BlackArea1_body_entered"]
+[connection signal="body_entered" from="room/suzuki_maruti/Default-Area2" to="room/suzuki_maruti" method="_on_DefaultArea2_body_entered"]
+[connection signal="body_entered" from="room/suzuki_maruti/Default-Area2" to="FPPlayer/VRDebugHUD" method="_on_DefaultArea2_body_entered"]
+[connection signal="body_entered" from="room/suzuki_maruti/Red-Area2" to="room/suzuki_maruti" method="_on_RedArea2_body_entered"]
+[connection signal="body_entered" from="room/suzuki_maruti/Red-Area2" to="FPPlayer/VRDebugHUD" method="_on_RedArea2_body_entered"]
+[connection signal="body_entered" from="room/suzuki_maruti/Black-Area2" to="room/suzuki_maruti" method="_on_BlackArea2_body_entered"]
+[connection signal="body_entered" from="room/suzuki_maruti/Black-Area2" to="FPPlayer/VRDebugHUD" method="_on_BlackArea2_body_entered"]
+[connection signal="body_entered" from="room/ford_angila/Default-Area" to="room/ford_angila" method="_on_DefaultArea_body_entered"]
+[connection signal="body_entered" from="room/ford_angila/Default-Area" to="FPPlayer/VRDebugHUD" method="_on_DefaultArea_body_entered"]
+[connection signal="body_entered" from="room/ford_angila/Red-Area" to="room/ford_angila" method="_on_RedArea_body_entered"]
+[connection signal="body_entered" from="room/ford_angila/Red-Area" to="FPPlayer/VRDebugHUD" method="_on_RedArea_body_entered"]
+[connection signal="body_entered" from="room/ford_angila/Black-Area" to="room/ford_angila" method="_on_BlackArea_body_entered"]
+[connection signal="body_entered" from="room/ford_angila/Black-Area" to="FPPlayer/VRDebugHUD" method="_on_BlackArea_body_entered"]

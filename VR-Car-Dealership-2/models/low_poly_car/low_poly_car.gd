@@ -36,14 +36,14 @@ func _rotation(delta) -> void:
 #	pass
 
 
-func _on_DefaultArea_body_entered(body):
+func _on_DefaultArea1_body_entered(body):
 	color_change(0)
 	pass # Replace with function body.
 
-func _on_RedArea_body_entered(body):
+func _on_RedArea1_body_entered(body):
 	color_change(1)
 	pass # Replace with function body.
 
-func _on_BlackArea_body_entered(body):
+func _on_BlackArea1_body_entered(body):
 	color_change(2)
 	pass # Replace with function body.
