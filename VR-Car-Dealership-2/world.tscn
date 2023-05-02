@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://models/room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/office_chair/Office_Chair.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://models/player/VRPlayer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://models/buy_stand/Buy_Stand.tscn" type="PackedScene" id=9]
 [ext_resource path="res://models/computer/SimpleComputer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://models/tireStack/tireStack.tscn" type="PackedScene" id=11]
 
 [node name="world" type="Spatial"]
 
@@ -47,3 +48,6 @@ transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -8.91529, 0.719816, 7.25
 
 [node name="VRPlayer" parent="." instance=ExtResource( 8 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.478657, -0.553767, 3.38638 )
+
+[node name="tireStack" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -12.8479, 0, 2.30914 )
