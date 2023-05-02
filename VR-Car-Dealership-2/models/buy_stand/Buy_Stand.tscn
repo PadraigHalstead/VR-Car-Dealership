@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://models/buy_stand/Material_003.material" type="Material" id=1]
 [ext_resource path="res://models/buy_stand/Material_002.material" type="Material" id=2]
@@ -194,10 +194,6 @@ surfaces/0 = {
 "vertex_count": 2704
 }
 
-[sub_resource type="BoxShape" id=15]
-
-[sub_resource type="CubeMesh" id=16]
-
 [node name="Buy_Stand_Buttons" type="StaticBody"]
 
 [node name="Base" type="MeshInstance" parent="."]
@@ -261,14 +257,3 @@ mesh = SubResource( 11 )
 transform = Transform( -0.260636, -4.86407e-08, -1.35367e-07, 4.86407e-08, 0.201028, -0.165887, 1.35367e-07, -0.165887, -0.201028, 0.358171, 1.60215, 0.114215 )
 visible = false
 mesh = SubResource( 12 )
-
-[node name="Green-Area" type="Area" parent="."]
-transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 1, -0.019238, -0.967028, -2.1 )
-
-[node name="Green-Collision" type="CollisionShape" parent="Green-Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11081, 0 )
-shape = SubResource( 15 )
-
-[node name="Green-Mesh" type="MeshInstance" parent="Green-Area"]
-mesh = SubResource( 16 )
-material/0 = ExtResource( 2 )
