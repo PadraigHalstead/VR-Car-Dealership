@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Vr-Car-Dealership-2"
+config/name="Vr-Car-Dealership"
 run/main_scene="res://world.tscn"
 config/icon="res://icon.png"
 
