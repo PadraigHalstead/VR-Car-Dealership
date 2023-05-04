@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://models/room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/office_chair/Office_Chair.tscn" type="PackedScene" id=2]
@@ -91,17 +91,6 @@ panorama = ExtResource( 19 )
 [sub_resource type="Environment" id=30]
 background_mode = 2
 background_sky = SubResource( 29 )
-
-[sub_resource type="GIProbeData" id=31]
-bounds = AABB( -42.8546, -10, -43.4048, 85.7093, 20, 86.8095 )
-cell_size = 0.678199
-to_cell_xform = Transform( 1.47449, 0, 0, 0, 1.47449, 0, 0, 0, 1.47449, 63.1888, 14.7449, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 22, 12, 1065353216, 0, 0, 1065353216, 0, 0, 1065353216, 0, 0, -1, -1, -1, -1, 1, -1, -1, -1, 0, 0, 8355711, 0, -1, 2, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 65538, -1, 3, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 131095, -1, -1, -1, -1, -1, -1, 4, -1, 0, 0, 8355711, 196799, -1, -1, -1, -1, -1, -1, 5, -1, 0, 0, 8355711, 263679, -1, -1, -1, -1, 6, 12, 8, 15, 0, 0, 8355711, 339967, -1, -1, -1, 7, -1, -1, -1, 11, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 5918190, 524287, -1, 9, -1, -1, -1, 10, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 4111323, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 11642094, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 12988614, 524287, -1, -1, 20, 13, -1, -1, 18, 14, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 6050573, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 10052869, 524287, 21, 16, -1, -1, 19, 17, -1, -1, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 6919427, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 11840532, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 14625663, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 15190399, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 3348607, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 6481695, 0, 2743935, 524287 )
-dynamic_range = 4
-energy = 0.3
-bias = 1.5
-normal_bias = 0.0
-propagation = 0.55
 
 [node name="world" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00470829, -0.00978899, 0.00596428 )
@@ -313,17 +302,13 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.3693
 [node name="VRDebugHUD" parent="VRPlayer" instance=ExtResource( 12 )]
 
 [node name="DirectionalLight2" type="DirectionalLight" parent="."]
-visible = false
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 30 )
-
-[node name="GIProbe" type="GIProbe" parent="."]
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0717, -0.606014, -4.67163 )
-extents = Vector3( 42.8546, 14.1304, 43.4048 )
-energy = 0.3
-propagation = 0.55
-data = SubResource( 31 )
+extents = Vector3( 29.8727, 12.6834, 37.6147 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="BakedLightmap"]
+environment = SubResource( 30 )
 
 [connection signal="body_entered" from="room/low_poly_car/Default-Area1" to="room/low_poly_car" method="_on_DefaultArea1_body_entered"]
 [connection signal="body_entered" from="room/low_poly_car/Default-Area1" to="VRPlayer/VRDebugHUD" method="_on_DefaultArea1_body_entered"]
