@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://models/room/Material.material" type="Material" id=1]
 [ext_resource path="res://models/room/Glass.material" type="Material" id=2]
@@ -18,6 +18,10 @@ surfaces/0 = {
 "vertex_count": 4
 }
 
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+albedo_color = Color( 0, 0, 0, 0 )
+
 [sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( -1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1 )
 
@@ -35,6 +39,10 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 4
 }
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_transparent = true
+albedo_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="ConvexPolygonShape" id=6]
 points = PoolVector3Array( -1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1 )
@@ -62,6 +70,7 @@ data = PoolVector3Array( -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0,
 [node name="Window Small" type="MeshInstance" parent="."]
 transform = Transform( 0.000692997, -0.00042866, -12.2528, 2.78266, -0.00135619, 0.00346284, 0.0286929, 0.131534, -0.0398955, 0.0338246, 3.30416, -14.9353 )
 mesh = SubResource( 1 )
+material/0 = SubResource( 7 )
 
 [node name="Window_Small_C" type="CollisionShape" parent="."]
 transform = Transform( 0.000692997, -0.00042866, -12.2528, 2.78266, -0.00135619, 0.00346284, 0.0286929, 0.131534, -0.0398955, 0.0338246, 3.30416, -14.9353 )
@@ -70,6 +79,7 @@ shape = SubResource( 5 )
 [node name="Window Long" type="MeshInstance" parent="."]
 transform = Transform( -0.028688, -0.131536, -0.0420526, 2.78266, -0.0013562, 0.00407457, 0.000870442, 0.000383433, -14.4117, 13.001, 3.36715, 0.0430107 )
 mesh = SubResource( 2 )
+material/0 = SubResource( 8 )
 
 [node name="Window_Long_C" type="CollisionShape" parent="."]
 transform = Transform( -0.028688, -0.131536, -0.0420526, 2.78266, -0.0013562, 0.00407457, 0.000870442, 0.000383433, -14.4117, 13.001, 3.36715, 0.0430107 )
