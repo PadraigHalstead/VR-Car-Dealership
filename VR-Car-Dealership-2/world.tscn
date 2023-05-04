@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://models/room/room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/office_chair/Office_Chair.tscn" type="PackedScene" id=2]
@@ -7,12 +7,18 @@
 [ext_resource path="res://models/low_poly_car/low_poly_car.tscn" type="PackedScene" id=5]
 [ext_resource path="res://models/ford/ford_angila.tscn" type="PackedScene" id=6]
 [ext_resource path="res://models/desk/Front_Desk.tscn" type="PackedScene" id=7]
-[ext_resource path="res://models/player/TestingPlayer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://models/player/VRPlayer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://models/buy_stand/Buy_Stand.tscn" type="PackedScene" id=9]
 [ext_resource path="res://models/computer/SimpleComputer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://models/tireStack/tireStack.tscn" type="PackedScene" id=11]
 [ext_resource path="res://models/VRHUD/VRHUD.tscn" type="PackedScene" id=12]
 [ext_resource path="res://models/buy_stand/Material_002.material" type="Material" id=13]
+[ext_resource path="res://models/carpet2/carpet.glb" type="PackedScene" id=14]
+[ext_resource path="res://models/cactus/potted-cactus.tscn" type="PackedScene" id=15]
+[ext_resource path="res://models/Cash Register/cashregister.glb" type="PackedScene" id=16]
+[ext_resource path="res://models/Cleaner/cleaner (1).glb" type="PackedScene" id=17]
+[ext_resource path="res://models/tree/potted-tree.tscn" type="PackedScene" id=18]
+[ext_resource path="res://models/Divider/divider.tscn" type="PackedScene" id=20]
 
 [sub_resource type="BoxShape" id=10]
 
@@ -79,6 +85,7 @@ albedo_color = Color( 0, 0, 0, 1 )
 [sub_resource type="CubeMesh" id=28]
 
 [node name="world" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00470829, -0.00978899, 0.00596428 )
 
 [node name="room" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0420953, 0, -0.0306683 )
@@ -119,6 +126,15 @@ shape = SubResource( 16 )
 mesh = SubResource( 17 )
 material/0 = SubResource( 18 )
 
+[node name="divider" parent="room/low_poly_car" instance=ExtResource( 20 )]
+transform = Transform( -0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 1.596, 0, 0.79112 )
+
+[node name="divider2" parent="room/low_poly_car" instance=ExtResource( 20 )]
+transform = Transform( -0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 1.596, 0, 2.88523 )
+
+[node name="divider3" parent="room/low_poly_car" instance=ExtResource( 20 )]
+transform = Transform( -0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 1.596, 0, -1.4267 )
+
 [node name="suzuki_maruti" parent="room" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.64824, 0, -10.5933 )
 skeleton = NodePath("../..")
@@ -154,6 +170,15 @@ shape = SubResource( 24 )
 [node name="Black-Mesh" type="MeshInstance" parent="room/suzuki_maruti/Black-Area2"]
 mesh = SubResource( 25 )
 material/0 = SubResource( 26 )
+
+[node name="divider4" parent="room/suzuki_maruti" instance=ExtResource( 20 )]
+transform = Transform( -0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 1.57005, 0, 0.740496 )
+
+[node name="divider5" parent="room/suzuki_maruti" instance=ExtResource( 20 )]
+transform = Transform( -0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 1.60616, 0, 2.83429 )
+
+[node name="divider6" parent="room/suzuki_maruti" instance=ExtResource( 20 )]
+transform = Transform( -0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 1.53181, 0, -1.477 )
 
 [node name="ford_angila" parent="room" instance=ExtResource( 6 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.98543, 0, 8.88736 )
@@ -193,17 +218,44 @@ shape = SubResource( 7 )
 mesh = SubResource( 8 )
 material/0 = SubResource( 9 )
 
+[node name="divider7" parent="room/ford_angila" instance=ExtResource( 20 )]
+transform = Transform( -0.499952, 0, 0.00692013, 0, 0.5, 0, -0.00692013, 0, -0.499952, 1.57742, 0, 0.863393 )
+
+[node name="divider8" parent="room/ford_angila" instance=ExtResource( 20 )]
+transform = Transform( -0.499952, 0, 0.00692013, 0, 0.5, 0, -0.00692013, 0, -0.499952, 1.58455, 0, 2.95749 )
+
+[node name="divider9" parent="room/ford_angila" instance=ExtResource( 20 )]
+transform = Transform( -0.499952, 0, 0.00692013, 0, 0.5, 0, -0.00692013, 0, -0.499952, 1.56988, 0, -1.35442 )
+
 [node name="Front_Desk" parent="room" instance=ExtResource( 7 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -9.08942, -2.38419e-07, 7.24798 )
 
 [node name="Office_Chair" parent="room/Front_Desk" instance=ExtResource( 2 )]
-transform = Transform( -0.999648, 0, 0.0265434, 0, 1, 0, -0.0265434, 0, -0.999648, 0.0588799, 2.38419e-07, 0.95316 )
+transform = Transform( -0.999648, 0, 0.0265434, 0, 1, 0, -0.0265434, 0, -0.999648, 0.0588779, 2.38419e-07, 0.95316 )
 
 [node name="Chair" parent="room/Front_Desk" instance=ExtResource( 4 )]
 transform = Transform( 0.804023, 0, 0.594598, 0, 1, 0, -0.594598, 0, 0.804023, -2.80799, 2.38419e-07, -0.316552 )
 
 [node name="Chair2" parent="room/Front_Desk" instance=ExtResource( 4 )]
-transform = Transform( 0.955875, 0, 0.293773, 0, 1, 0, -0.293773, 0, 0.955875, -1.61183, 0, -1.33624 )
+transform = Transform( 0.925969, 0, 0.377598, 0, 1, 0, -0.377598, 0, 0.925969, -1.63712, 0, -1.17055 )
+
+[node name="cashregister" parent="room/Front_Desk" instance=ExtResource( 16 )]
+transform = Transform( -0.0761262, 0, 0.129247, 0, 0.15, 0, -0.129247, 0, -0.0761262, -0.924009, 0.806603, 0.251034 )
+
+[node name="cleaner1" parent="room/Front_Desk" instance=ExtResource( 17 )]
+transform = Transform( 1.31134e-08, 0, 0.1, 0, 0.1, 0, -0.1, 0, 1.31134e-08, 5.05117, 2.38419e-07, 3.91584 )
+
+[node name="cleaner2" parent="room/Front_Desk" instance=ExtResource( 17 )]
+transform = Transform( 1.31134e-08, 0, 0.1, 0, 0.1, 0, -0.1, 0, 1.31134e-08, 4.70856, 2.38419e-07, 3.91584 )
+
+[node name="cleaner3" parent="room/Front_Desk" instance=ExtResource( 17 )]
+transform = Transform( -0.0583754, 0.0811931, -3.54906e-09, 0, -4.37114e-09, -0.1, -0.0811931, -0.0583754, 2.55167e-09, 4.33561, 0.135222, 3.69354 )
+
+[node name="carpet" parent="room/Front_Desk" instance=ExtResource( 14 )]
+transform = Transform( -0.326479, 0, 0.378697, 0, 0.5, 0, -0.378697, 0, -0.326479, -2.17105, -0.2212, -0.699912 )
+
+[node name="potted-tree" parent="room/Front_Desk" instance=ExtResource( 18 )]
+transform = Transform( 1.31134e-08, 0, 0.1, 0, 0.1, 0, -0.1, 0, 1.31134e-08, 7.39224, 0.173347, 3.61277 )
 
 [node name="Buy_Stand_Buttons" parent="." instance=ExtResource( 9 )]
 transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -9.78353, -2.38419e-07, 10.0404 )
@@ -225,27 +277,34 @@ transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -8.91529, 0.719816, 7.25
 [node name="tireStack" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -12.8479, 0, 2.30914 )
 
-[node name="FPPlayer" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.21832, 4.76837e-07, 7.85706 )
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.717372, 2.04119, 7.02327 )
+light_energy = 1.744
 
-[node name="VRDebugHUD" parent="FPPlayer" instance=ExtResource( 12 )]
+[node name="potted-cactus" parent="." instance=ExtResource( 15 )]
+transform = Transform( 0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -9.63941, 0.745226, 8.53418 )
+
+[node name="VRPlayer" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.36936, -0.405977, 2.365 )
+
+[node name="VRDebugHUD" parent="VRPlayer" instance=ExtResource( 12 )]
 
 [connection signal="body_entered" from="room/low_poly_car/Default-Area1" to="room/low_poly_car" method="_on_DefaultArea1_body_entered"]
-[connection signal="body_entered" from="room/low_poly_car/Default-Area1" to="FPPlayer/VRDebugHUD" method="_on_DefaultArea1_body_entered"]
+[connection signal="body_entered" from="room/low_poly_car/Default-Area1" to="VRPlayer/VRDebugHUD" method="_on_DefaultArea1_body_entered"]
 [connection signal="body_entered" from="room/low_poly_car/Red-Area1" to="room/low_poly_car" method="_on_RedArea1_body_entered"]
-[connection signal="body_entered" from="room/low_poly_car/Red-Area1" to="FPPlayer/VRDebugHUD" method="_on_RedArea1_body_entered"]
+[connection signal="body_entered" from="room/low_poly_car/Red-Area1" to="VRPlayer/VRDebugHUD" method="_on_RedArea1_body_entered"]
 [connection signal="body_entered" from="room/low_poly_car/Black-Area1" to="room/low_poly_car" method="_on_BlackArea1_body_entered"]
-[connection signal="body_entered" from="room/low_poly_car/Black-Area1" to="FPPlayer/VRDebugHUD" method="_on_BlackArea1_body_entered"]
+[connection signal="body_entered" from="room/low_poly_car/Black-Area1" to="VRPlayer/VRDebugHUD" method="_on_BlackArea1_body_entered"]
 [connection signal="body_entered" from="room/suzuki_maruti/Default-Area2" to="room/suzuki_maruti" method="_on_DefaultArea2_body_entered"]
-[connection signal="body_entered" from="room/suzuki_maruti/Default-Area2" to="FPPlayer/VRDebugHUD" method="_on_DefaultArea2_body_entered"]
+[connection signal="body_entered" from="room/suzuki_maruti/Default-Area2" to="VRPlayer/VRDebugHUD" method="_on_DefaultArea2_body_entered"]
 [connection signal="body_entered" from="room/suzuki_maruti/Red-Area2" to="room/suzuki_maruti" method="_on_RedArea2_body_entered"]
-[connection signal="body_entered" from="room/suzuki_maruti/Red-Area2" to="FPPlayer/VRDebugHUD" method="_on_RedArea2_body_entered"]
+[connection signal="body_entered" from="room/suzuki_maruti/Red-Area2" to="VRPlayer/VRDebugHUD" method="_on_RedArea2_body_entered"]
 [connection signal="body_entered" from="room/suzuki_maruti/Black-Area2" to="room/suzuki_maruti" method="_on_BlackArea2_body_entered"]
-[connection signal="body_entered" from="room/suzuki_maruti/Black-Area2" to="FPPlayer/VRDebugHUD" method="_on_BlackArea2_body_entered"]
+[connection signal="body_entered" from="room/suzuki_maruti/Black-Area2" to="VRPlayer/VRDebugHUD" method="_on_BlackArea2_body_entered"]
 [connection signal="body_entered" from="room/ford_angila/Default-Area" to="room/ford_angila" method="_on_DefaultArea_body_entered"]
-[connection signal="body_entered" from="room/ford_angila/Default-Area" to="FPPlayer/VRDebugHUD" method="_on_DefaultArea_body_entered"]
+[connection signal="body_entered" from="room/ford_angila/Default-Area" to="VRPlayer/VRDebugHUD" method="_on_DefaultArea_body_entered"]
 [connection signal="body_entered" from="room/ford_angila/Red-Area" to="room/ford_angila" method="_on_RedArea_body_entered"]
-[connection signal="body_entered" from="room/ford_angila/Red-Area" to="FPPlayer/VRDebugHUD" method="_on_RedArea_body_entered"]
+[connection signal="body_entered" from="room/ford_angila/Red-Area" to="VRPlayer/VRDebugHUD" method="_on_RedArea_body_entered"]
 [connection signal="body_entered" from="room/ford_angila/Black-Area" to="room/ford_angila" method="_on_BlackArea_body_entered"]
-[connection signal="body_entered" from="room/ford_angila/Black-Area" to="FPPlayer/VRDebugHUD" method="_on_BlackArea_body_entered"]
-[connection signal="body_entered" from="Buy_Stand_Buttons/BuyArea" to="FPPlayer/VRDebugHUD" method="_on_BuyArea_body_entered"]
+[connection signal="body_entered" from="room/ford_angila/Black-Area" to="VRPlayer/VRDebugHUD" method="_on_BlackArea_body_entered"]
+[connection signal="body_entered" from="Buy_Stand_Buttons/BuyArea" to="VRPlayer/VRDebugHUD" method="_on_BuyArea_body_entered"]

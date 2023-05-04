@@ -2,6 +2,7 @@ extends ARVROrigin
 
 ##onready var hud = $VRDebugHUD
 export var speed = 0.1
+var moving = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,10 +42,99 @@ func _physics_process(delta):
 		# VRPlayer is looking downward (below level)
 		##hud.setStatus("Forward")
 		translate(direction * speed)
+		moving = 1
 	elif (y_value < 0.9 && z_value < 0.4):
 		# VRPlayer is looking upward (above level)
 		##hud.setStatus("Backward")
 		translate(-direction * speed)
+		moving = 2
+	else:
+		moving = 0
 	##else:
 		# VRPlayer is neighter looking up or down
 		##hud.setStatus("...")
+
+
+func _on_fakeCollision1_body_entered(body):
+	for i in range(10):
+		var direction = -Vector3(
+		ARVRServer.get_hmd_transform().basis.z.x, 
+		0, 
+		ARVRServer.get_hmd_transform().basis.z.z)
+		translate(-direction * speed)
+	pass # Replace with function body.
+
+func _on_Front_body_entered(body):
+	
+	if moving == 1:
+		for i in range(5):
+			var direction = -Vector3(
+			ARVRServer.get_hmd_transform().basis.z.x, 
+			0, 
+			ARVRServer.get_hmd_transform().basis.z.z)
+			translate(-direction * speed)
+	elif moving == 2:
+		for i in range(5):
+			var direction = -Vector3(
+			ARVRServer.get_hmd_transform().basis.z.x, 
+			0, 
+			ARVRServer.get_hmd_transform().basis.z.z)
+			translate(direction * speed)
+	pass # Replace with function body.
+
+
+func _on_Front2_body_entered(body):
+	
+	if moving == 1:
+		for i in range(5):
+			var direction = -Vector3(
+			ARVRServer.get_hmd_transform().basis.z.x, 
+			0, 
+			ARVRServer.get_hmd_transform().basis.z.z)
+			translate(-direction * speed)
+	elif moving == 2:
+		for i in range(5):
+			var direction = -Vector3(
+			ARVRServer.get_hmd_transform().basis.z.x, 
+			0, 
+			ARVRServer.get_hmd_transform().basis.z.z)
+			translate(direction * speed)
+	pass # Replace with function body.
+
+
+func _on_Front3_body_entered(body):
+	
+	if moving == 1:
+		for i in range(5):
+			var direction = -Vector3(
+			ARVRServer.get_hmd_transform().basis.z.x, 
+			0, 
+			ARVRServer.get_hmd_transform().basis.z.z)
+			translate(-direction * speed)
+	elif moving == 2:
+		for i in range(5):
+			var direction = -Vector3(
+			ARVRServer.get_hmd_transform().basis.z.x, 
+			0, 
+			ARVRServer.get_hmd_transform().basis.z.z)
+			translate(direction * speed)
+	pass # Replace with function body.
+
+
+func _on_Front4_body_entered(body):
+	
+	if moving == 1:
+		for i in range(5):
+			var direction = -Vector3(
+			ARVRServer.get_hmd_transform().basis.z.x, 
+			0, 
+			ARVRServer.get_hmd_transform().basis.z.z)
+			translate(-direction * speed)
+	elif moving == 2:
+		for i in range(5):
+			var direction = -Vector3(
+			ARVRServer.get_hmd_transform().basis.z.x, 
+			0, 
+			ARVRServer.get_hmd_transform().basis.z.z)
+			translate(direction * speed)
+	pass # Replace with function body.
