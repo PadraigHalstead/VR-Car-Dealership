@@ -4,3 +4,6 @@
 
 [node name="potted-cactus" instance=ExtResource( 1 )]
 transform = Transform( 0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0 )
+
+[node name="Cube001" parent="." index="0"]
+use_in_baked_light = true

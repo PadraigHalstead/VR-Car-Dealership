@@ -188,6 +188,7 @@ data = PoolVector3Array( -0.9064, 0.7014, 1.5062, -0.9443, 0.6606, 1.2675, -0.91
 albedo_color = Color( 0.521569, 0.521569, 0.521569, 1 )
 
 [node name="ford_angila" type="MeshInstance"]
+use_in_baked_light = true
 script = ExtResource( 12 )
 
 [node name="car" type="MeshInstance" parent="."]

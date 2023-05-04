@@ -216,6 +216,7 @@ points = PoolVector3Array( 1.02658, -0.0294646, 1.82038, 1.02658, -0.262787, 1.8
 albedo_color = Color( 0.521569, 0.521569, 0.521569, 1 )
 
 [node name="low_poly_car" type="MeshInstance"]
+use_in_baked_light = true
 script = ExtResource( 10 )
 
 [node name="car" type="MeshInstance" parent="."]

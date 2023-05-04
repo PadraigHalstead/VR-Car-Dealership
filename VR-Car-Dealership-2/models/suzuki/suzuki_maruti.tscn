@@ -268,6 +268,7 @@ data = PoolVector3Array( 0.7126, 0.4295, 1.3596, 0.7126, 0.575, 1.2609, 0.7126, 
 albedo_color = Color( 0.521569, 0.521569, 0.521569, 1 )
 
 [node name="suzuki_maruti" type="MeshInstance"]
+use_in_baked_light = true
 script = ExtResource( 11 )
 
 [node name="car" type="MeshInstance" parent="."]

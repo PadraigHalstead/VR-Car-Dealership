@@ -36,6 +36,7 @@ points = PoolVector3Array( -0.58318, 0.640878, -0.397465, -0.58318, 0.705004, -0
 [node name="Front_Desk" type="StaticBody"]
 
 [node name="Front Desk" type="MeshInstance" parent="."]
+use_in_baked_light = true
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
