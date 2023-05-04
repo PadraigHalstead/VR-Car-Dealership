@@ -18,7 +18,7 @@
 [ext_resource path="res://models/Cash Register/cashregister.glb" type="PackedScene" id=16]
 [ext_resource path="res://models/Cleaner/cleaner (1).glb" type="PackedScene" id=17]
 [ext_resource path="res://models/tree/potted-tree.tscn" type="PackedScene" id=18]
-[ext_resource path="res://kloofendal_48d_partly_cloudy_puresky_1k (1).exr" type="Texture" id=19]
+[ext_resource path="res://models/sky/kloofendal_48d_partly_cloudy_puresky_1k (1).exr" type="Texture" id=19]
 [ext_resource path="res://models/Divider/divider.tscn" type="PackedScene" id=20]
 
 [sub_resource type="BoxShape" id=10]
@@ -293,7 +293,7 @@ transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -12.8479, 0, 2.30914 )
 transform = Transform( 0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -9.63941, 0.745226, 8.53418 )
 
 [node name="VRPlayer" parent="." instance=ExtResource( 8 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.36936, -0.405977, 2.365 )
+transform = Transform( 0.00839499, 0, -0.999965, 0, 1, 0, 0.999965, 0, 0.00839499, -1.36936, -0.405977, 2.365 )
 
 [node name="VRDebugHUD" parent="VRPlayer" instance=ExtResource( 12 )]
 
