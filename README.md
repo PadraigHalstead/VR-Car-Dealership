@@ -6,7 +6,7 @@ The idea for a car dealership spawned after some discussion between the members 
 
 ### Demo Video:
 
-https://github.com/PadraigHalstead/VR-Car-Dealership/blob/main/Demo.mp4
+https://github.com/PadraigHalstead/VR-Car-Dealership/assets/79229057/d9318790-054e-47f6-8407-c915c08fface
 
 ## Requirements
 
