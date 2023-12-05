@@ -8,6 +8,14 @@ The idea for a car dealership spawned after some discussion between the members 
 
 https://github.com/PadraigHalstead/VR-Car-Dealership/assets/79229057/d9318790-054e-47f6-8407-c915c08fface
 
+<h2 align="center">Technologies Used<h2>
+<p align="center">
+   <img src="https://skillicons.dev/icons?i=godot,blender&perline=2" />
+</p>
+
+
+
+
 ## Requirements
 
 The project required features such as:
